@@ -13,6 +13,8 @@ public class Seleniumtest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("https://www.google.com/");
+		String name = driver.findElement(By.name("btnI")).getText();
+		System.out.println("Name is :- " + name);
 	}
 
 }
