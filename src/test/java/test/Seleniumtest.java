@@ -1,5 +1,6 @@
 package test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,8 +14,10 @@ public class Seleniumtest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("https://www.google.com/");
-		String name = driver.findElement(By.name("btnI")).getText();
+		driver.findElement(By.name("q")).sendKeys("Hello ");
+		String name = driver.findElement(By.name("q")).getAttribute("value");
 		System.out.println("Name is :- " + name);
+		driver.quit();
 	}
 
 }
